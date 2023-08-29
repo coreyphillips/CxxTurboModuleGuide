@@ -17,5 +17,6 @@ namespace facebook::react
 
     int doFibExpensive(jsi::Runtime &rt, int n);
     std::string hello(jsi::Runtime &rt);
+    std::string hashString(jsi::Runtime &rt, const std::string& input);
   };
 } // namespace facebook::react

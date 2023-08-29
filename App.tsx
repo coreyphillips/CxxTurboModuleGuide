@@ -66,9 +66,18 @@ export default function App(): JSX.Element {
     alert(r);
   };
 
+  const runHashString = async () => {
+    const testStr = Math.random().toString(36).substring(7);
+    const r = await NativeSampleModule.hashString(testStr);
+    console.log(r);
+    alert(r);
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollStyle}>
+        <Text style={styles.title}>libsodium Test</Text>
+        <Button title={'Hash Random String'} onPress={runHashString} />
         <Text style={styles.title}>hello.c Test</Text>
         <Button title={'Say Hello To C'} onPress={runHello} />
         <Text style={styles.title}>C++ vs JS Fibonacci Test</Text>

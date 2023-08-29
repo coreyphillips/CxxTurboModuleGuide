@@ -10,10 +10,11 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 file(GLOB_RECURSE tm_SRC CONFIGURE_DEPENDS *.cpp *.c)
 add_library(tm STATIC ${tm_SRC})
 
-target_include_directories(tm PUBLIC . fib hello)
+target_include_directories(tm PUBLIC . fib hello salt)
 target_include_directories(react_codegen_AppSpecs PUBLIC .)
 
 target_link_libraries(tm
         jsi
         react_nativemodule_core
-        react_codegen_AppSpecs)
+        react_codegen_AppSpecs
+        ${CMAKE_SOURCE_DIR}/salt/libsodium.a)

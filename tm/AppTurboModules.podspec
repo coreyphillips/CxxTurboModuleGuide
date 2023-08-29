@@ -13,6 +13,7 @@ Pod::Spec.new do |s|
   s.author          = package["author"]
   s.source          = { :git => package["repository"], :tag => "#{s.version}" }
   s.source_files    = "**/*.{h,cpp,c}"
+  s.vendored_libraries = "salt/libsodium.a"
   s.pod_target_xcconfig = {
     "CLANG_CXX_LANGUAGE_STANDARD" => "c++17"
   }
